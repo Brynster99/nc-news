@@ -43,9 +43,9 @@ export default function ArticleList() {
             : article.body}
         </p>
         <p>
+          {/* Could make this link to an anchor on SingleArticle page */}
           <b>{article.comment_count}</b> comments
-        </p>{' '}
-        {/* Could make this link to an anchor on SingleArticle page */}
+        </p>
       </article>
     );
   });
