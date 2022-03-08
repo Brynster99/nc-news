@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import api from '../../api';
 import ErrorPage from '../Misc/ErrorPage';
 import ArticleVotes from './ArticleVotes';
-import CommentList from './CommentList';
+import CommentList from './Comments/CommentList';
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});

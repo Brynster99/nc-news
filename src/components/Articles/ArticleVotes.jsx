@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import api from '../../api';
+import UserContext from '../../Contexts/User';
 
 export default function ArticleVotes({ article }) {
   const [currentVotes, setCurrentVotes] = useState(article.votes);
-  const [clicked, setClicked] = useState(false);
+  const [increment, setIncrement] = useState(0);
+  const { user } = useContext(UserContext);
 
   const incVotes = (incrementBy) => {
     api.patch(`/articles/${article.article_id}`, { inc_votes: incrementBy });
@@ -12,9 +14,10 @@ export default function ArticleVotes({ article }) {
   return (
     <form onSubmit={(e) => e.preventDefault()}>
       <button
-        disabled={clicked}
+        className="vote-button-increase"
+        disabled={increment > 0 || !user ? true : false}
         onClick={() => {
-          setClicked(true);
+          setIncrement((increment) => increment + 1);
           setCurrentVotes((currentVotes) => currentVotes + 1);
           incVotes(+1);
         }}
@@ -25,9 +28,10 @@ export default function ArticleVotes({ article }) {
         <b>{currentVotes}</b> votes
       </p>
       <button
-        disabled={clicked}
+        className="vote-button-decrease"
+        disabled={increment < 0 || !user ? true : false}
         onClick={() => {
-          setClicked(true);
+          setIncrement((increment) => increment - 1);
           setCurrentVotes((currentVotes) => currentVotes - 1);
           incVotes(-1);
         }}
