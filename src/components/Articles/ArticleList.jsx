@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import api from '../../api';
 import ErrorPage from '../Misc/ErrorPage';
 import ArticleCard from './ArticleCard';
@@ -31,8 +31,13 @@ export default function ArticleList() {
   return (
     <section className="article-list">
       <h2>{`${topic_slug || 'All'} Articles`}</h2>
-      {articles.map((article) => (
-        <ArticleCard article={article} />
+      {articles.map((article, index) => (
+        <ArticleCard
+          key={`article-${article.article_id}`}
+          article={article}
+          setArticles={setArticles}
+          articleIndex={index}
+        />
       ))}
     </section>
   );

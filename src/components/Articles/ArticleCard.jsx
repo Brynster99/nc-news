@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ArticleVotes from './ArticleVotes';
 
 export default function ArticleCard({ article }) {
   const date = new Date(article.created_at);
@@ -14,9 +16,9 @@ export default function ArticleCard({ article }) {
           article.author
         }`}
       </h4>
-      <p>
-        <b>{article.votes}</b> votes
-      </p>
+
+      <ArticleVotes article={article} />
+
       <p>
         {article.body.length > 75
           ? `${article.body.slice(0, 72)}...`
