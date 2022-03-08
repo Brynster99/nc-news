@@ -5,6 +5,7 @@ import UserContext from '../../../Contexts/User';
 export default function PostComment({ article_id, setComments }) {
   const [inputBody, setInputBody] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [statusMsg, setStatusMsg] = useState('');
   const { user } = useContext(UserContext);
 
   return (
@@ -12,7 +13,13 @@ export default function PostComment({ article_id, setComments }) {
       onSubmit={(e) => {
         e.preventDefault();
 
+        if (!inputBody) {
+          setStatusMsg('Please enter a valid comment...');
+          return;
+        }
+
         setIsLoading(true);
+        setStatusMsg('Posting Comment...');
 
         api
           .post(`/articles/${article_id}/comments`, {
@@ -21,10 +28,14 @@ export default function PostComment({ article_id, setComments }) {
           })
           .then(({ data: { comment } }) => {
             setComments((comments) => {
-              const cloneComments = [...comments];
+              const cloneComments = comments.map((comment) => {
+                return { ...comment };
+              });
               cloneComments.unshift(comment);
               return cloneComments;
             });
+
+            setStatusMsg('');
             setIsLoading(false);
           });
 
@@ -42,7 +53,7 @@ export default function PostComment({ article_id, setComments }) {
         />
         <button className={isLoading ? 'hide' : 'show'}>Post</button>
       </fieldset>
-      <p>{isLoading ? 'Posting Comment...' : ''}</p>
+      <p>{statusMsg}</p>
     </form>
   );
 }
