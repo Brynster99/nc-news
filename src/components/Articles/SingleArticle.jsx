@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import api from '../../api';
 import ErrorPage from '../Misc/ErrorPage';
+import ArticleVotes from './ArticleVotes';
 import CommentList from './CommentList';
 
 export default function SingleArticle() {
@@ -40,6 +41,7 @@ export default function SingleArticle() {
         }`}
       </h3>
       <p>{article.body}</p>
+      <ArticleVotes article={article} />
       <CommentList article_id={article_id} />
     </section>
   );
