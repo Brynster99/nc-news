@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import api from '../../../api';
-import CommentCard from './CommentCard';
-import PostComment from './PostComment';
+import api from '../../api';
 
 export default function CommentList({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -22,14 +20,19 @@ export default function CommentList({ article_id }) {
   return (
     <section className="comment-list">
       <h3>Comments:</h3>
-      <PostComment article_id={article_id} setComments={setComments} />
       <ul>
-        {comments.map((comment) => (
-          <CommentCard
-            key={`comment-${comment.comment_id}`}
-            comment={comment}
-          />
-        ))}
+        {comments.map((comment) => {
+          const date = new Date(comment.created_at);
+
+          return (
+            <li className="comment-card" key={`comment-${comment.comment_id}`}>
+              <h5>{`${
+                comment.author
+              } at ${date.toLocaleTimeString()}, ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</h5>
+              <p>{comment.body}</p>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

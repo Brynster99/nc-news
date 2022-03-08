@@ -28,48 +28,4 @@ a:hover {
 
 li {
   list-style: none;
-  text-transform: capitalize;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: capitalize;
-}
-
-.vote-button-increase,
-.vote-button-decrease {
-  background: black;
-  color: rgb(223, 223, 223);
-  padding: 10px 25px;
-  border-radius: 100px;
-  font-size: 1em;
-  font-weight: 600;
-  border: 0px;
-  transition-duration: 300ms;
-}
-
-.vote-button-increase:hover,
-.vote-button-decrease:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-.vote-button-increase:disabled {
-  background: green;
-}
-
-.vote-button-decrease:disabled {
-  background: rgb(175, 0, 0);
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.show {
-  visibility: visible;
 }
