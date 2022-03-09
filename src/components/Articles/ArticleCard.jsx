@@ -12,9 +12,9 @@ export default function ArticleCard({ article }) {
 
       <h4>
         Posted in <Link to={`/topic/${article.topic}`}>{article.topic}</Link> at{' '}
-        {`${date.toLocaleTimeString()}, ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} by ${
-          article.author
-        }`}
+        {`${date.toLocaleTimeString()}, ${date.getDate()}/${
+          date.getMonth() + 1
+        }/${date.getFullYear()} by ${article.author}`}
       </h4>
 
       <ArticleVotes article={article} />

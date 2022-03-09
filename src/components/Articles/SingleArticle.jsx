@@ -37,9 +37,9 @@ export default function SingleArticle() {
       <h2>{article.title}</h2>
       <h3>
         Posted in <Link to={`/topic/${article.topic}`}>{article.topic}</Link> at{' '}
-        {`${date.toLocaleTimeString()}, ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} by ${
-          article.author
-        }`}
+        {`${date.toLocaleTimeString()}, ${date.getDate()}/${
+          date.getMonth() + 1
+        }/${date.getFullYear()} by ${article.author}`}
       </h3>
       <p>{article.body}</p>
       <ArticleVotes article={article} />
