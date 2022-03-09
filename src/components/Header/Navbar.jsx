@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import api from '../../api';
 
@@ -12,7 +13,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <ul>
+    <ul className="navigation-list-topics">
+      <Link key="link-to-all" to="/">
+        <li key="topic-all">All</li>
+      </Link>
       {topics.map((topic) => {
         return (
           <Link key={`link-to-${topic.slug}`} to={`/topic/${topic.slug}`}>

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import ArticleVotes from './ArticleVotes';
+import { Link } from 'react-router-dom';
 
 export default function ArticleCard({ article }) {
   const date = new Date(article.created_at);
@@ -9,6 +9,7 @@ export default function ArticleCard({ article }) {
       <Link to={`/article/${article.article_id}`}>
         <h3>{article.title}</h3>
       </Link>
+
       <h4>
         Posted in <Link to={`/topic/${article.topic}`}>{article.topic}</Link> at{' '}
         {`${date.toLocaleTimeString()}, ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} by ${
@@ -23,6 +24,7 @@ export default function ArticleCard({ article }) {
           ? `${article.body.slice(0, 72)}...`
           : article.body}
       </p>
+
       <p>
         {/* Could make this link to an anchor on SingleArticle page */}
         <b>{article.comment_count}</b> comments

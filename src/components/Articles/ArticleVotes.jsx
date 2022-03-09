@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
-import api from '../../api';
+
 import UserContext from '../../Contexts/User';
+import api from '../../api';
 
 export default function ArticleVotes({ article }) {
   const [currentVotes, setCurrentVotes] = useState(article.votes);
@@ -12,7 +13,7 @@ export default function ArticleVotes({ article }) {
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form className="votes-form" onSubmit={(e) => e.preventDefault()}>
       <button
         className="vote-button-increase"
         disabled={increment > 0 || !user ? true : false}
@@ -27,6 +28,7 @@ export default function ArticleVotes({ article }) {
       <p>
         <b>{currentVotes}</b> votes
       </p>
+
       <button
         className="vote-button-decrease"
         disabled={increment < 0 || !user ? true : false}

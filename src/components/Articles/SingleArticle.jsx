@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import api from '../../api';
-import ErrorPage from '../Misc/ErrorPage';
+import { useEffect, useState } from 'react';
+
 import ArticleVotes from './ArticleVotes';
 import CommentList from './Comments/CommentList';
+import ErrorPage from '../Misc/ErrorPage';
+import api from '../../api';
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
