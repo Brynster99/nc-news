@@ -1,4 +1,4 @@
-.App {
+body {
   text-align: center;
 }
 
@@ -17,7 +17,9 @@
   text-align: left;
   border: 5px solid black;
   border-radius: 10px;
-  filter: drop-shadow(25px 10px 5px rgba(0, 0, 0, 0.233));
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.233));
+  text-transform: none;
+  width: fit-content;
 }
 
 a,
