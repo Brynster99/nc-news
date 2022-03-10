@@ -41,19 +41,20 @@ export default function ArticleList() {
   if (error) return <ErrorPage error={error} />;
 
   return (
-    <section className="article-list">
+    <section className="article-section">
       <h2>{`${topic || 'All'} Articles`}</h2>
 
       <SortArticles sortOrderBy={sortOrderBy} setSortOrderBy={setSortOrderBy} />
-
-      {articles.map((article, index) => (
-        <ArticleCard
-          key={`article-${article.article_id}`}
-          article={article}
-          setArticles={setArticles}
-          articleIndex={index}
-        />
-      ))}
+      <section className="article-list">
+        {articles.map((article, index) => (
+          <ArticleCard
+            key={`article-${article.article_id}`}
+            article={article}
+            setArticles={setArticles}
+            articleIndex={index}
+          />
+        ))}
+      </section>
     </section>
   );
 }

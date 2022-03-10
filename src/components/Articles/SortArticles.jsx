@@ -1,7 +1,7 @@
 export default function SortArticles({ sortOrderBy, setSortOrderBy }) {
   return (
     <form>
-      <label htmlFor="sortarticles-select-sortby">Sort By: </label>
+      <label htmlFor="sortarticles-select-sortby">Sort By:</label>
       <select
         id="sortarticles-select-sortby"
         value={sortOrderBy}

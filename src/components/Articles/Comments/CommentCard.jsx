@@ -36,6 +36,8 @@ export default function CommentCard({ comment, setComments }) {
       } at ${date.toLocaleTimeString()}, ${date.getDate()}/${
         date.getMonth() + 1
       }/${date.getFullYear()}`}</h5>
+
+      <p>{comment.body}</p>
       {comment.author === user ? (
         <section className="comment-controls">
           <button
@@ -50,8 +52,6 @@ export default function CommentCard({ comment, setComments }) {
       ) : (
         <></>
       )}
-
-      <p>{comment.body}</p>
     </li>
   );
 }

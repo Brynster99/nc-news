@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
-import api from '../../../api';
+
 import UserContext from '../../../Contexts/User';
+import api from '../../../api';
 
 export default function PostComment({ article_id, setComments }) {
   const [inputBody, setInputBody] = useState('');
@@ -10,6 +11,7 @@ export default function PostComment({ article_id, setComments }) {
 
   return (
     <form
+      className="postcomment-form"
       onSubmit={(e) => {
         e.preventDefault();
 
@@ -42,17 +44,20 @@ export default function PostComment({ article_id, setComments }) {
         setInputBody('');
       }}
     >
-      <fieldset>
-        <legend>Post a Comment</legend>
-        <input
-          className={isLoading ? 'hide' : 'show'}
-          type="text"
-          id="comment-body"
-          value={inputBody}
-          onChange={(e) => setInputBody(e.target.value)}
-        />
-        <button className={isLoading ? 'hide' : 'show'}>Post</button>
-      </fieldset>
+      <label htmlFor="comment-body">Post a Comment:</label>
+      <input
+        className={isLoading ? 'hide' : 'show'}
+        type="text"
+        id="comment-body"
+        value={inputBody}
+        onChange={(e) => setInputBody(e.target.value)}
+      />
+      <button
+        className={`postcomment-button-submit ${isLoading ? 'hide' : 'show'}`}
+      >
+        Post
+      </button>
+
       <p>{statusMsg}</p>
     </form>
   );

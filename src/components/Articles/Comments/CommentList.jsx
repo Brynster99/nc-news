@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import api from '../../../api';
+
 import CommentCard from './CommentCard';
 import PostComment from './PostComment';
+import api from '../../../api';
 
 export default function CommentList({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -21,7 +22,7 @@ export default function CommentList({ article_id }) {
 
   return (
     <section className="comment-list">
-      <h3>Comments:</h3>
+      <h3>Comments</h3>
       <PostComment article_id={article_id} setComments={setComments} />
       <ul>
         {comments.map((comment) => (
