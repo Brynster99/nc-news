@@ -20,6 +20,7 @@ main {
   gap: 25px;
   width: fit-content;
   margin: 0px auto 50px auto;
+  font-weight: 600;
 }
 
 .article-card {
