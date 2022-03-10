@@ -32,7 +32,6 @@ header {
   text-align: center;
   border: 3px solid black;
   border-radius: 10px;
-  filter: drop-shadow(10px 7px 5px rgba(0, 0, 0, 0.233));
   text-transform: none;
   margin: 10px 0;
 }
