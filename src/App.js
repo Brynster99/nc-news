@@ -20,7 +20,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<ArticleList />} />
-          <Route path="/topic/:topic_slug" element={<ArticleList />} />
+          <Route path="/topic/:topic" element={<ArticleList />} />
           <Route path="/article/:article_id" element={<SingleArticle />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

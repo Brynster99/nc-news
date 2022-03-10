@@ -7,12 +7,14 @@ export default function Header() {
   const { user } = useContext(UserContext);
 
   return (
-    <Link to="/">
-      <header>
+    <header>
+      <Link to="/">
         <img src={cuteFerret} alt="cute ferret" width="125px" loading="lazy" />
+      </Link>{' '}
+      <Link to={'/'}>
         <h1>NC News</h1>
-        <h3>Logged in as {user}</h3>
-      </header>
-    </Link>
+      </Link>
+      <h3>Logged in as {user}</h3>
+    </header>
   );
 }

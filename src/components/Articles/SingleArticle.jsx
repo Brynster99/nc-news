@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import api from '../../api';
-import ErrorPage from '../Misc/ErrorPage';
+import { useEffect, useState } from 'react';
+
 import ArticleVotes from './ArticleVotes';
 import CommentList from './Comments/CommentList';
+import ErrorPage from '../Misc/ErrorPage';
+import api from '../../api';
 
 export default function SingleArticle() {
   const [article, setArticle] = useState({});
@@ -36,9 +37,9 @@ export default function SingleArticle() {
       <h2>{article.title}</h2>
       <h3>
         Posted in <Link to={`/topic/${article.topic}`}>{article.topic}</Link> at{' '}
-        {`${date.toLocaleTimeString()}, ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} by ${
-          article.author
-        }`}
+        {`${date.toLocaleTimeString()}, ${date.getDate()}/${
+          date.getMonth() + 1
+        }/${date.getFullYear()} by ${article.author}`}
       </h3>
       <p>{article.body}</p>
       <ArticleVotes article={article} />
