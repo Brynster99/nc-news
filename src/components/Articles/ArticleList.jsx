@@ -10,7 +10,7 @@ export default function ArticleList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
-  const { topic_slug: topic } = useParams();
+  const { topic } = useParams();
   const [sortOrderBy, setSortOrderBy] = useState('created_at,DESC');
 
   useEffect(() => {
