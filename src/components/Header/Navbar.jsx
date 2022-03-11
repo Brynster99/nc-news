@@ -14,15 +14,12 @@ export default function Navbar() {
 
   return (
     <ul className="navigation-list-topics">
-      <Link key="link-to-all" to="/nc-news/">
+      <Link key="link-to-all" to="/">
         <li key="topic-all">All</li>
       </Link>
       {topics.map((topic) => {
         return (
-          <Link
-            key={`link-to-${topic.slug}`}
-            to={`/nc-news/topic/${topic.slug}`}
-          >
+          <Link key={`link-to-${topic.slug}`} to={`/topic/${topic.slug}`}>
             <li key={`topic-${topic.slug}`}>{topic.slug}</li>
           </Link>
         );

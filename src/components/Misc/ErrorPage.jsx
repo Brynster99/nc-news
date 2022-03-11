@@ -10,7 +10,7 @@ export default function ErrorPage({ error }) {
           ? `${error.response.status} - ${error.response.data.msg}`
           : '404 - Path not found'}
       </h2>
-      <Link to="/nc-news/">
+      <Link to="/">
         <button>Back To Safety!</button>
       </Link>
     </>

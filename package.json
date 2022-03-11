@@ -2,7 +2,7 @@
   "name": "nc-news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://brynster99.github.io/nc-news",
+  "homepage": "https://brynster99.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",

@@ -6,13 +6,12 @@ export default function ArticleCard({ article }) {
 
   return (
     <article className="article-card" key={`article-${article.article_id}`}>
-      <Link to={`/nc-news/article/${article.article_id}`}>
+      <Link to={`/article/${article.article_id}`}>
         <h3>{article.title}</h3>
       </Link>
 
       <h4>
-        Posted in{' '}
-        <Link to={`/nc-news/topic/${article.topic}`}>{article.topic}</Link> at{' '}
+        Posted in <Link to={`/topic/${article.topic}`}>{article.topic}</Link> at{' '}
         {`${date.toLocaleTimeString()}, ${date.getDate()}/${
           date.getMonth() + 1
         }/${date.getFullYear()} by ${article.author}`}

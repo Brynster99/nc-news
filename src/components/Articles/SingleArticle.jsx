@@ -36,8 +36,7 @@ export default function SingleArticle() {
     <section className="single-article">
       <h2>{article.title}</h2>
       <h3>
-        Posted in{' '}
-        <Link to={`/nc-news/topic/${article.topic}`}>{article.topic}</Link> at{' '}
+        Posted in <Link to={`/topic/${article.topic}`}>{article.topic}</Link> at{' '}
         {`${date.toLocaleTimeString()}, ${date.getDate()}/${
           date.getMonth() + 1
         }/${date.getFullYear()} by ${article.author}`}

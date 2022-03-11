@@ -19,12 +19,9 @@ export default function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/nc-news/" element={<ArticleList />} />
-          <Route path="/nc-news/topic/:topic" element={<ArticleList />} />
-          <Route
-            path="/nc-news/article/:article_id"
-            element={<SingleArticle />}
-          />
+          <Route path="/" element={<ArticleList />} />
+          <Route path="/topic/:topic" element={<ArticleList />} />
+          <Route path="/article/:article_id" element={<SingleArticle />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
