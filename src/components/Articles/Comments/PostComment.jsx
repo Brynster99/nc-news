@@ -44,9 +44,11 @@ export default function PostComment({ article_id, setComments }) {
         setInputBody('');
       }}
     >
-      <label htmlFor="comment-body">Post a Comment:</label>
-      <input
-        className={isLoading ? 'hide' : 'show'}
+      <label className="commentform-label" htmlFor="comment-body">
+        Post a Comment:
+      </label>
+      <textarea
+        className={`${isLoading ? 'hide' : 'show'}`}
         type="text"
         id="comment-body"
         value={inputBody}

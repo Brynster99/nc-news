@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'roboto', sans-serif;
   text-align: center;
   background-color: #f7ecde;
 }
@@ -120,21 +122,32 @@ label {
   font-weight: 600;
 }
 
-input {
+textarea {
+  font-family: 'roboto', sans-serif;
+  font-size: 1rem;
   background-color: #fbf8f1;
   border: 3px solid black;
   border-radius: 10px;
   filter: drop-shadow(5px 2px 5px rgba(0, 0, 0, 0.233));
   padding: 2px 8px;
+  width: 60%;
+  height: 75px;
 }
 
 .postcomment-button-submit {
+  font-weight: 600;
   background-color: #e9dac1;
   border: 3px solid black;
-  border-radius: 10px;
+  border-radius: 15px;
   filter: drop-shadow(5px 2px 5px rgba(0, 0, 0, 0.233));
-  padding: 2px 8px;
+  padding: 3px 10px;
   margin: 0px 10px;
+  transition-duration: 200ms;
+}
+
+.postcomment-button-submit:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .votes-form {
@@ -196,6 +209,7 @@ input {
 
 .comment-button-delete:hover {
   background-color: #c14445;
+  cursor: pointer;
   transform: scale(1.05);
 }
 
