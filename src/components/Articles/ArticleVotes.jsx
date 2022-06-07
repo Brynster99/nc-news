@@ -23,10 +23,10 @@ export default function ArticleVotes({ article }) {
           incVotes(+1);
         }}
       >
-        +1
+        👍
       </button>
       <p>
-        <b>{currentVotes}</b> votes
+        <b>{currentVotes}</b> Likes
       </p>
 
       <button
@@ -38,7 +38,7 @@ export default function ArticleVotes({ article }) {
           incVotes(-1);
         }}
       >
-        -1
+        👎
       </button>
     </form>
   );

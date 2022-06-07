@@ -20,14 +20,8 @@ export default function ArticleCard({ article }) {
       <ArticleVotes article={article} />
 
       <p>
-        {article.body.length > 75
-          ? `${article.body.slice(0, 72)}...`
-          : article.body}
-      </p>
-
-      <p>
         {/* Could make this link to an anchor on SingleArticle page */}
-        <b>{article.comment_count}</b> comments
+        <b>{article.comment_count}</b> Comments
       </p>
     </article>
   );

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import UserContext from '../../Contexts/User';
-import cuteFerret from '../../images/cuteFerret.png';
+import loudSpeaker from '../../images/loudspeaker.png';
+import profilePicture from '../../images/profilepicture.jpeg';
 import { useContext } from 'react';
 
 export default function Header() {
@@ -9,12 +10,20 @@ export default function Header() {
   return (
     <header>
       <Link to="/">
-        <img src={cuteFerret} alt="cute ferret" width="125px" loading="lazy" />
+        <img src={loudSpeaker} alt="site logo" width="125px" loading="lazy" />
       </Link>{' '}
-      <Link to={'/'}>
-        <h1>NC News</h1>
-      </Link>
-      <h3>Logged in as {user}</h3>
+      <h1>The Loudest</h1>
+      <section className="header-section-loggeduser">
+        <img
+          src={profilePicture}
+          alt="logged in user's avatar"
+          width="80px"
+          height="80px"
+          loading="lazy"
+          className="header-image-avatar"
+        />
+        <h3>{user}</h3>
+      </section>
     </header>
   );
 }
